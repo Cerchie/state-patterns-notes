@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-
+import NumberItem from './NumberItem'
 const NumbersList = () => {
     const [numbers, setNumbers] = useState([2,5,7,11,19]);
     const remove = (num) => {
@@ -9,9 +9,7 @@ const NumbersList = () => {
     return (
         <ul>
             {numbers.map(n => (
-            <li>
-                <button onClick={() => remove(n)}>{n}</button>
-            </li>
+                <NumberItem number={n} remove={()=> remove(n)}/>
             ))}
         </ul>
     )
