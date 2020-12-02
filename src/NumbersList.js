@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import NumberItem from './NumberItem'
 const NumbersList = () => {
-    const [numbers, setNumbers] = useState([2,5,7,11,19]);
+    const [numbers, setNumbers] = useState([2,5,7,11,19,2,11]);
     const remove = (num) => {
         setNumbers(numbers.filter(n => n !== num))
         console.log('REMOVING', num)
@@ -9,7 +9,7 @@ const NumbersList = () => {
     return (
         <ul>
             {numbers.map(n => (
-                <NumberItem number={n} remove={()=> remove(n)}/>
+                <NumberItem number={n} key={n} remove={()=> remove(n)}/>
             ))}
         </ul>
     )
